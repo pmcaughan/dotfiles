@@ -1,0 +1,6 @@
+---
+geometry: margin=2cm
+header-includes:
+  - \renewcommand{\baselinestretch}{1.5} 
+---
+
