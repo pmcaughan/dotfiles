@@ -77,4 +77,5 @@ command Q q!
 "I hope this works
 set tags+=./
 
+
 nmap <F8> :TagbarToggle<CR>

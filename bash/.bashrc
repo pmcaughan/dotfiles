@@ -57,7 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\][\u@\h\[\033[00m\]:\[\033[01;34m\]\W]\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]「 \u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[01;32m\] 」\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -79,7 +79,7 @@ if [ -x /usr/bin/dircolors ]; then
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
-    alias grep='grep --color=auto'
+    alias grep='grep -n --color=auto'
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
@@ -118,7 +118,7 @@ fi
 
 #Use Vi mode
 #set -o vi
-eval "$(thefuck --alias)"
+# eval "$(thefuck --alias)"
 
 #Adds scripts folder
 export PATH=$PATH:~/Scripts
