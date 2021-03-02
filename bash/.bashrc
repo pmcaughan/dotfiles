@@ -122,6 +122,7 @@ fi
 
 #Adds scripts folder
 export PATH=$PATH:~/Scripts
+export PATH=$PATH:~/.cargo/bin
 
 #Greetings Turtle
 cowsay -f turtle "Let's get this bread"
