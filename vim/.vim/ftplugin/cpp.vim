@@ -2,7 +2,8 @@
 nnoremap <leader>cm :-1read ~/.vim/templates/cpp_main_template.cpp<CR>
 nnoremap <leader>ch :-1read ~/.vim/templates/cpp_header_template.h<CR>
 
-nnoremap <leader>for ifor(int i = 0; i < ; i++){<ESC>6hi
+abbreviate ifor for(int i = 0; i < <**> ; i++){
+
 nnoremap <leader>db icerr <<"---DB " << endl;<ESC>10hi
 
 nnoremap <leader>T itemplate<typename T>

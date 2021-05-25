@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/phillip/School/2-CSCE313/CSCE313_Work/PA_03'
-let g:netrw_dirhist_2='/home/phillip/School/1-CSCE313/CSCE313_Work/QUIZ_04/test_folder'
-let g:netrw_dirhist_3='/home/phillip/School/2-CSCE315/Projects/CSCE315_P1_Website'
-let g:netrw_dirhist_4='/home/phillip/School/2-CSCE315/Projects/CSCE315_P1_Website/images'
-let g:netrw_dirhist_5='/home/phillip/School/2-CSCE315/Projects/CSCE315_P1_Website'
-let g:netrw_dirhist_6='/home/phillip/.dotfiles/vim/.vim/ftplugin'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/phillip/School/2-CSCE315/Projects/CSCE315_P3_AdventureBuddy/adventure-buddy/public'
+let g:netrw_dirhist_2='/home/phillip/School/2-CSCE315/Projects/CSCE315_P3_AdventureBuddy/adventure-buddy'
+let g:netrw_dirhist_3='/home/phillip/School/2-CSCE315/Projects/CSCE315_P3_AdventureBuddy/adventure-buddy/routes'
+let g:netrw_dirhist_4='/home/phillip/School/2-CSCE315/Projects'
