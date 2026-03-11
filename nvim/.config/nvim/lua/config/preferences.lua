@@ -11,7 +11,7 @@ vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')
 
 -- Autocomplete
-vim.opt.omnifunc = 'syntaxcomplete#Complete'
+-- vim.opt.omnifunc = 'syntaxcomplete#Complete'
 
 -- Recursive subdirectories on path (for ^x^f file completion)
 vim.opt.path:append('**')
@@ -41,9 +41,6 @@ vim.opt.clipboard:prepend('unnamed')
 -- Encoding (Neovim defaults to UTF-8, this is a no-op but kept for parity)
 vim.opt.encoding = 'UTF-8'
 
--- Q command force-quits (shadows the built-in Q)
--- vim.api.nvim_create_user_command('Q', 'q!', {})
-
 -- Tags
 vim.opt.tags = './tags;/'
 
@@ -51,4 +48,20 @@ vim.opt.tags = './tags;/'
 vim.opt.hlsearch = false
 
 -- Tagbar toggle
-vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>')
+-- vim.keymap.set('n', '<F8>', ':TagbarToggle<CR>')
+vim.cmd("set completeopt+=noselect")
+vim.opt.winborder="rounded"
+
+-- Error Display
+vim.diagnostic.config({
+	float = true,
+	-- virtual_lines = true,
+	signs = true,               -- the 'E' gutter sign
+	underline = true,           -- applies DiagnosticUnderline highlight groups to the range
+})
+vim.o.updatetime = 500  -- ms before CursorHold fires
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    vim.diagnostic.open_float(nil, { focus = false, scope = "line" })
+  end
+})
