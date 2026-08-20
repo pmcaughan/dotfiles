@@ -8,7 +8,7 @@ vim.g.mapleader = ' '
 
 -- Syntax and filetype
 vim.cmd('syntax on')
-vim.cmd('filetype plugin indent on')
+-- vim.cmd('filetype plugin indent on')
 
 -- Autocomplete
 -- vim.opt.omnifunc = 'syntaxcomplete#Complete'
@@ -34,6 +34,12 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 0
 vim.opt.expandtab = false
+-- vim.api.nvim_create_autocmd("FileType", { -- REALLY no expand tab
+-- 	pattern = "*",
+-- 	callback = function()
+-- 	  vim.opt_local.expandtab = false
+-- 	end,
+-- })
 
 -- Use system clipboard
 vim.opt.clipboard:prepend('unnamed')

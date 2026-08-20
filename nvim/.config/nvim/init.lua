@@ -5,3 +5,5 @@ require("config.preferences")
 require("config.lazy")
 
 require("config.lsps")
+
+-- require("plugins.pack_plugins")

@@ -1,2 +1,6 @@
 vim.lsp.enable('ty')
 vim.lsp.enable('gopls')
+vim.lsp.enable('ruby-lsp')
+vim.lsp.enable('typescript-language-server')
+-- vim.lsp.config('typescript-language-server')
+-- vim.lsp.config('ruby-lsp')
