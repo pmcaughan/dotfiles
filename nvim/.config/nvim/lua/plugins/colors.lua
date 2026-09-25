@@ -35,12 +35,23 @@ return {
 	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' },
-		config = {
+		opts = {
 			theme = 'auto',
 			sections = {
 				lualine_a = {'mode'},
 				lualine_b = {'hostname', 'diff'},
-				lualine_c = {'diagnostics', 'filename'},
+				-- lualine_c = {'diagnostics', 'filename'},
+				lualine_c = {
+				  { "filename" },
+				  {
+					function()
+					  return require("nvim-navic").get_location()
+					end,
+					cond = function()
+					  return require("nvim-navic").is_available()
+					end,
+				  },
+				},
 				lualine_d = {'buffers'},
 				lualine_x = {'datetime'},
 				lualine_z = {'lsp-status'}
