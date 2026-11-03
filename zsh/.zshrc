@@ -1,4 +1,9 @@
+
+# Added by Kiro CLI
+case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="${PATH:+$PATH:}$HOME/.local/bin" ;; esac
+
 alias ll='ls -la'
+alias ls='ls --color=auto'
 export PATH=$PATH:~/Scripts
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -13,7 +18,15 @@ RESET='\[\e[0m\]'
 
 # PROMPT='%B「%n@%m:%b%1/%B」%b$ '
 
-PS1='%B「%n@%m:%b%1/%B」%b$ '
+setopt PROMPT_SUBST
+
+git_branch() {
+  local branch
+  branch=$(git symbolic-ref --short HEAD 2>/dev/null)
+  [ -n "$branch" ] && echo " ($branch)"
+}
+
+PS1='%B「%n@%m:%b%1/%B$(git_branch)」%b$ '
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -37,4 +50,13 @@ export CPPFLAGS="-I/opt/homebrew/opt/mysql-client@5.7/include $CPPFLAGS"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/phillipmcaughan/.cache/lm-studio/bin"
 export PATH="$HOME/.local/bin:$PATH"
-# export EDITOR="nvim"
+export EDITOR="nvim"
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
+
